@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean Focus Toy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero glass">
+        <div>
+          <p class="kicker">Ocean Focus Toy</p>
+          <h1>Dreamy focus sessions with a tiny sea buddy.</h1>
+          <p class="subtitle">
+            Pick a preset, press start, and keep your pet happy while the bubbles drift by.
+          </p>
+        </div>
+        <div class="sparkle" aria-hidden="true"></div>
+      </header>
+
+      <main class="panel">
+        <section class="timer-section glass">
+          <div class="timer-display" aria-live="polite">
+            <span id="timeDisplay">25:00</span>
+          </div>
+          <p class="status" id="statusText">Ready for a calm focus session.</p>
+
+          <div class="progress-bar" aria-label="Focus progress">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="controls">
+            <button class="btn glossy" id="startButton">Start</button>
+            <button class="btn glossy" id="pauseButton">Pause</button>
+            <button class="btn glossy" id="resetButton">Reset</button>
+          </div>
+
+          <div class="preset-row">
+            <button class="preset" data-minutes="25">Focus 25</button>
+            <button class="preset" data-minutes="5">Break 5</button>
+            <button class="preset" data-minutes="15">Break 15</button>
+            <button class="preset" data-minutes="45">Deep 45</button>
+          </div>
+        </section>
+
+        <section class="pet-section glass">
+          <div class="pet-screen">
+            <div class="bubble bubble-one"></div>
+            <div class="bubble bubble-two"></div>
+            <div class="bubble bubble-three"></div>
+
+            <div class="pet" id="pet">
+              <div class="pet-face">
+                <div class="eye"></div>
+                <div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+              <div class="pet-glow"></div>
+            </div>
+          </div>
+          <div class="pet-info">
+            <h2>Sea Pal</h2>
+            <p class="pet-mood" id="petMood">Mood: idle</p>
+            <label class="task-label" for="taskInput">Today's focus task</label>
+            <input
+              id="taskInput"
+              type="text"
+              placeholder="Write ocean notes..."
+              autocomplete="off"
+            />
+            <p class="hint">Tip: keep the timer running to cheer up your pet.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Made with pastel bubbles and calm focus energy.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
