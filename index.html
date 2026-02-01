@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocean Focus Toy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=VT323&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <div>
+        <p class="app__tag">✨ Ocean Focus Toy ✨</p>
+        <h1>Dreamy Focus Pod</h1>
+        <p class="app__subtitle">A cozy, glassy timer with a tiny ocean buddy.</p>
+      </div>
+      <div class="sparkles" aria-hidden="true">
+        <span>✧</span><span>✦</span><span>✧</span><span>✦</span>
+      </div>
+    </header>
+
+    <main class="glass">
+      <section class="timer">
+        <div class="timer__display" aria-live="polite">
+          <span class="timer__label">TIMER</span>
+          <span id="time-display">25:00</span>
+        </div>
+        <p id="status-text" class="status">Ready to float into focus.</p>
+
+        <div class="progress">
+          <div id="progress-bar" class="progress__bar" style="width: 0%;"></div>
+        </div>
+
+        <div class="controls">
+          <button id="start-btn" class="btn btn--primary">Start</button>
+          <button id="pause-btn" class="btn">Pause</button>
+          <button id="reset-btn" class="btn">Reset</button>
+        </div>
+      </section>
+
+      <section class="presets">
+        <h2>Presets</h2>
+        <div class="presets__buttons">
+          <button class="chip" data-minutes="25">Focus 25</button>
+          <button class="chip" data-minutes="5">Break 5</button>
+          <button class="chip" data-minutes="15">Break 15</button>
+          <button class="chip" data-minutes="45">Deep 45</button>
+        </div>
+      </section>
+
+      <section class="tasks">
+        <h2>Task</h2>
+        <label class="task__label" for="task-input">What are we focusing on?</label>
+        <input
+          id="task-input"
+          type="text"
+          placeholder="Example: Study ocean currents"
+        />
+      </section>
+
+      <section class="pet">
+        <div class="pet__bubble">
+          <div class="pet__body" id="pet-body">
+            <div class="pet__eye"></div>
+            <div class="pet__eye"></div>
+            <div class="pet__cheek"></div>
+          </div>
+          <div class="pet__waves"></div>
+        </div>
+        <div class="pet__status">
+          <p class="pet__label">PET MOOD</p>
+          <p id="pet-mood" class="pet__mood">Idle</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Made for gentle focus with sparkles and bubbles.</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
