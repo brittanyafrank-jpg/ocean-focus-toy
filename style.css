@@ -1,0 +1,315 @@
+:root {
+  --aqua: #b8f1f9;
+  --blue: #a6d3ff;
+  --lilac: #d4c7ff;
+  --pink: #ffd1e6;
+  --ink: #1c2340;
+  --glass: rgba(255, 255, 255, 0.35);
+  --glass-strong: rgba(255, 255, 255, 0.55);
+  --glow: 0 0 25px rgba(174, 240, 255, 0.75);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #f6fbff, #d9f1ff, #c3e1ff);
+}
+
+.ocean {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 18px 60px;
+  overflow: hidden;
+}
+
+.sparkles,
+.bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sparkles::before,
+.sparkles::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 70%);
+  opacity: 0.6;
+  filter: blur(2px);
+  animation: float 10s ease-in-out infinite;
+}
+
+.sparkles::before {
+  top: 10%;
+  left: 5%;
+}
+
+.sparkles::after {
+  bottom: 5%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.bubbles {
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.7), transparent 35%),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.6), transparent 40%),
+    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.5), transparent 45%);
+  opacity: 0.6;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.app__header {
+  text-align: center;
+}
+
+.badge {
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--glass);
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: var(--glow);
+}
+
+.app__header h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 0;
+  color: rgba(28, 35, 64, 0.7);
+}
+
+.panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(96, 132, 183, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.timer-panel {
+  text-align: center;
+}
+
+.timer-display {
+  font-family: "VT323", monospace;
+  font-size: 72px;
+  color: #25316d;
+  text-shadow: 0 0 12px rgba(167, 226, 255, 0.9);
+}
+
+.timer-label {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: rgba(37, 49, 109, 0.65);
+  margin-top: -8px;
+}
+
+.progress {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 18px auto 12px;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.75);
+}
+
+.progress__bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--aqua), var(--blue), var(--lilac));
+  transition: width 0.3s ease;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  font-family: "Nunito", sans-serif;
+  padding: 10px 24px;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--pink), var(--lilac));
+  box-shadow: 0 6px 16px rgba(174, 102, 207, 0.35);
+  color: #3b2d5a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 10px 22px rgba(174, 102, 207, 0.45);
+}
+
+.button.ghost {
+  background: linear-gradient(135deg, var(--aqua), var(--blue));
+}
+
+.presets-panel h2,
+.task-panel h2,
+.pet-panel h2 {
+  margin-top: 0;
+}
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.75);
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+}
+
+input[type="text"] {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+}
+
+.status {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+.pet-panel {
+  text-align: center;
+}
+
+.pet {
+  margin: 10px auto 12px;
+  width: 160px;
+  height: 160px;
+  border-radius: 40% 40% 50% 50%;
+  background: linear-gradient(180deg, var(--aqua), #ffffff);
+  position: relative;
+  box-shadow: var(--glow);
+  transition: transform 0.3s ease;
+}
+
+.pet[data-mood="focus"] {
+  transform: scale(1.05);
+}
+
+.pet[data-mood="done"] {
+  background: linear-gradient(180deg, var(--pink), var(--lilac));
+}
+
+.pet__body {
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.pet__face {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.pet__eye {
+  width: 10px;
+  height: 14px;
+  background: #2b3a67;
+  border-radius: 999px;
+}
+
+.pet__mouth {
+  width: 18px;
+  height: 10px;
+  border-bottom: 3px solid #2b3a67;
+  border-radius: 0 0 12px 12px;
+  margin-top: 6px;
+}
+
+.pet__fin {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  width: 34px;
+  height: 50px;
+  background: var(--lilac);
+  border-radius: 50% 60% 60% 50%;
+  transform: translateY(-50%) rotate(-12deg);
+}
+
+.pet-status {
+  font-family: "VT323", monospace;
+  font-size: 20px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (min-width: 760px) {
+  .app {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app__header {
+    grid-column: 1 / -1;
+  }
+
+  .timer-panel {
+    grid-column: 1 / -1;
+  }
+}

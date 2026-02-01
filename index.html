@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean Focus Toy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ocean">
+      <div class="sparkles" aria-hidden="true"></div>
+      <div class="bubbles" aria-hidden="true"></div>
+
+      <main class="app">
+        <header class="app__header">
+          <p class="badge">Ocean Focus Toy</p>
+          <h1>Stay dreamy, stay focused.</h1>
+          <p class="subtitle">A tiny timer for gentle focus waves.</p>
+        </header>
+
+        <section class="panel timer-panel">
+          <div class="timer-display" role="timer" aria-live="polite">
+            <span id="timer-minutes">25</span>:<span id="timer-seconds">00</span>
+          </div>
+          <p class="timer-label">MM:SS</p>
+
+          <div class="progress">
+            <div class="progress__bar" id="progress-bar"></div>
+          </div>
+
+          <div class="controls">
+            <button class="button" id="start-btn" type="button">Start</button>
+            <button class="button ghost" id="pause-btn" type="button">Pause</button>
+            <button class="button ghost" id="reset-btn" type="button">Reset</button>
+          </div>
+        </section>
+
+        <section class="panel presets-panel">
+          <h2>Presets</h2>
+          <div class="preset-buttons">
+            <button class="pill" data-minutes="25" type="button">Focus 25</button>
+            <button class="pill" data-minutes="5" type="button">Break 5</button>
+            <button class="pill" data-minutes="15" type="button">Break 15</button>
+            <button class="pill" data-minutes="45" type="button">Deep 45</button>
+          </div>
+        </section>
+
+        <section class="panel task-panel">
+          <h2>Today’s Task</h2>
+          <label class="input-wrap">
+            <span class="input-label">Task name</span>
+            <input
+              id="task-input"
+              type="text"
+              placeholder="Finish ocean notes ✨"
+              maxlength="60"
+            />
+          </label>
+          <p class="status" id="status-text">Status: Ready to focus.</p>
+        </section>
+
+        <section class="panel pet-panel">
+          <h2>Sea Buddy</h2>
+          <div class="pet" id="pet" data-mood="idle">
+            <div class="pet__body"></div>
+            <div class="pet__face">
+              <span class="pet__eye"></span>
+              <span class="pet__eye"></span>
+              <span class="pet__mouth"></span>
+            </div>
+            <div class="pet__fin"></div>
+          </div>
+          <p class="pet-status" id="pet-status">Mood: idle</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
